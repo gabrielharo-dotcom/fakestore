@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 function ProductSkeleton() {
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-border p-4">
+    <div className="flex flex-col gap-3 rounded-xl border border-border bg-white p-4 shadow-sm">
       <Skeleton className="h-52 w-full rounded-lg" />
       <Skeleton className="h-4 w-20 rounded" />
       <Skeleton className="h-4 w-full rounded" />
@@ -22,20 +22,35 @@ export default function Home() {
     <div className="max-w-6xl mx-auto px-4 py-10">
 
       {/* Hero */}
-      <section className="text-center py-16 mb-12 rounded-2xl bg-gradient-to-br from-primary/10 via-background to-secondary/20 border border-border">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-          <ShoppingBag className="h-8 w-8 text-primary" />
-        </div>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground mb-4">
-          FakeStore Catalog
-        </h1>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          Explora nuestro catálogo de productos. Ropa, joyería, electrónica y más,
-          todo en un solo lugar.
-        </p>
-        <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-          <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
-          {loading ? "Cargando productos..." : `${products.length} productos disponibles`}
+      <section className="relative text-center py-20 mb-12 rounded-3xl overflow-hidden
+        bg-gradient-to-br from-orange-400 via-orange-500 to-amber-400
+        shadow-xl shadow-orange-200">
+
+        {/* Manchas decorativas */}
+        <div className="absolute -top-8 -left-8 w-52 h-52 rounded-full bg-yellow-300/30 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-8 -right-8 w-52 h-52 rounded-full bg-red-400/20 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+
+        <div className="relative z-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl
+            bg-white/20 border border-white/30 mb-6 shadow-lg">
+            <ShoppingBag className="h-8 w-8 text-white" />
+          </div>
+
+          <h1 className="text-5xl font-extrabold tracking-tight text-white mb-4 drop-shadow-sm">
+            FakeStore Catalog
+          </h1>
+
+          <p className="text-white/85 text-lg max-w-xl mx-auto leading-relaxed">
+            Explora nuestro catálogo de productos. Ropa, joyería, electrónica y más,
+            todo en un solo lugar.
+          </p>
+
+          <div className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+            bg-white/20 border border-white/30 text-sm text-white font-medium">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-300 animate-pulse" />
+            {loading ? "Cargando productos..." : `${products.length} productos disponibles`}
+          </div>
         </div>
       </section>
 
@@ -49,7 +64,7 @@ export default function Home() {
 
       {/* Grid */}
       <section>
-        <h2 className="text-xl font-semibold text-foreground mb-6">
+        <h2 className="text-xl font-bold text-foreground mb-6">
           Todos los productos
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">

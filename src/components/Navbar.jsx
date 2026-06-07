@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/entities", label: "Personajes" },
+  { to: "/entities", label: "Productos" },
 ]
 
 export default function Navbar() {

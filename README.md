@@ -8,7 +8,8 @@ Aplicación web desarrollada en **React + Vite** que consume la API pública [Fa
 
 **Deploy:** [https://fakestore-ebon.vercel.app](https://fakestore-ebon.vercel.app)
 
-**Video demostrativo:** [Ver en YouTube](#)
+**Video demostrativo:** [Ver en YouTube](https://www.youtube.com/watch?v=pC3RDvlvHwk)
+
 
 ---
 
